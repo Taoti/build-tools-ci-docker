@@ -45,7 +45,7 @@ RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
 # Install NPM
 # With the horrible pattern of curl [] | sudo!
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install nodejs
 RUN npm install -g grunt-cli
 
