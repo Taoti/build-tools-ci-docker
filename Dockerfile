@@ -43,6 +43,12 @@ RUN apt-get install -y ruby jq curl
 RUN gem install circle-cli
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
+# Install NPM
+# With the horrible pattern of curl [] | sudo!
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install nodejs
+RUN npm install -g grunt-cli
+
 # Create an unpriviliged testuser
 RUN groupadd -g 999 tester && \
     useradd -r -m -u 999 -g tester tester && \
@@ -89,16 +95,6 @@ RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer 
 
 # Add bats for functional testing
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local
-
-# Install NPM
-# With the horrible pattern of curl [] | sudo! USE A PROPER PPA FOLKS!
-#RUN curl -sL https://deb.nodesource.com/setup_10.x > node_setup
-#RUN chmod +x node_setup
-#RUN ./node_setup
-RUN echo 'deb https://deb.nodesource.com/node_10.x stretch main' > /etc/apt/sources.list.d/nodesource.list
-RUN echo 'deb-src https://deb.nodesource.com/node_10.x stretch main' >> /etc/apt/sources.list.d/nodesource.list
-RUN apt-get install nodejs
-RUN npm install -g grunt-cli
 
 # Add behat for more functional testing
 RUN mkdir ~/behat && \
