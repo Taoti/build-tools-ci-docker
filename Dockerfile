@@ -92,7 +92,7 @@ RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/loca
 
 # Install NPM
 # With the horrible pattern of curl [] | sudo! USE A PROPER PPA FOLKS!
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install nodejs
 RUN npm install -g grunt-cli
 
