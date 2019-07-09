@@ -43,6 +43,10 @@ RUN apt-get install -y ruby jq curl
 RUN gem install circle-cli
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
+# Cleanup
+RUN apt install python3-apt
+RUN curl https://github.com/davidfoerster/aptsources-cleanup/releases/download/v0.1.6/aptsources-cleanup.zip > aptsources-cleanup.zip
+RUN python3 -OEs aptsources-cleanup.zip
 # Install NPM
 # With the horrible pattern of curl [] | sudo!
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
