@@ -2,7 +2,7 @@
 
 [![docker pull quay.io/pantheon-public/build-tools-ci](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/pantheon-public/build-tools-ci)
 
-This is the source Dockerfile for the Taoti Build tools docker image and is based of off[pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image, primary changes are the addition of NPM and Gulp.
+This is the source Dockerfile for the Taoti build tools docker image and is based of off the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image, primary changes are the addition of NPM and Gulp.
 
 ## Image Contents
 
