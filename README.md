@@ -1,8 +1,8 @@
 # Docker Build Tools CI
 
-[![docker pull quay.io/pantheon-public/build-tools-ci](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/pantheon-public/build-tools-ci)
+[![docker pull quay.io/taoticreative/build-tools-ci-docker](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/taoticreative/build-tools-ci-docker)
 
-This is the source Dockerfile for the Taoti build tools docker image and is based of off the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image, primary changes are the addition of NPM and Gulp.
+This is the source Dockerfile for the [Taoti build tools docker image](https://quay.io/repository/taoticreative/build-tools-ci-docker) and is based of off the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image, primary changes are the addition of NPM and Gulp.
 
 ## Image Contents
 
