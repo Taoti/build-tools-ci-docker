@@ -2,7 +2,7 @@
 
 [![docker pull quay.io/pantheon-public/build-tools-ci](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/pantheon-public/build-tools-ci)
 
-This is the source Dockerfile for the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image.
+This is the source Dockerfile for the Taoti Build tools docker image and is based of off[pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) docker image, primary changes are the addition of NPM and Gulp.
 
 ## Image Contents
 
@@ -26,10 +26,5 @@ This is the source Dockerfile for the [pantheon-public/build-tools-ci](https://q
   - hub
   - lab
 - Test scripts
-
-## Branches
-
-- 4.x: Terminus 2.x and Build Tools 2.x
-- 3.x: Deprecated: Terminus 1 with Build Tools 2.0.0-beta2
-- 2.x: Terminus 1.x and Build Tools 1.x
-- 1.x: Deprecated
+- NPM
+- Gulp
