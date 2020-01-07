@@ -96,9 +96,9 @@ RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer 
 # Add bats for functional testing
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local
 
-RUN composer global require consolidation/cgr
-
-RUN cgr mglaman/drupal-check
+#Add drupal-check for deprecation testing purposes.
+RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer global require consolidation/cgr
+RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin cgr mglaman/drupal-check
 # Add behat for more functional testing
 RUN mkdir ~/behat && \
     cd ~/behat && \
