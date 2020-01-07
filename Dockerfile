@@ -97,7 +97,7 @@ RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer 
 RUN git clone https://github.com/sstephenson/bats.git; bats/install.sh /usr/local
 
 #Add drupal-check for deprecation testing purposes.
-RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer global require consolidation/cgr
-RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin cgr mglaman/drupal-check
+RUN mkdir -p /usr/local/share/drupal-check
+RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n --working-dir=/usr/local/share/drupal-check require mglaman/drupal-check:"^1.0"
 
 ENTRYPOINT ["dumb-init", "--"]
