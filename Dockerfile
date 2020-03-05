@@ -41,7 +41,7 @@ ADD . /build-tools-ci
 
 # Collect the components we need for this image
 RUN apt-get update
-RUN apt-get install -y ruby jq curl apt-utils
+RUN apt-get install -y ruby jq curl apt-utils apt-transport-https ca-certificates
 RUN gem install circle-cli
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
@@ -49,7 +49,8 @@ RUN composer -n global require -n "hirak/prestissimo:^0.3"
 RUN curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo "deb https://deb.nodesource.com/node_10.x stretch main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 RUN echo "deb-src https://deb.nodesource.com/node_10.x stretch main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
-RUN apt-get install nodejs -y
+RUN apt-get update
+RUN apt-get install gcc g++ make nodejs -y
 RUN npm install -g gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
 
 # Create an unpriviliged testuser
