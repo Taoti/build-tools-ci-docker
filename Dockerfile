@@ -44,8 +44,11 @@ RUN gem install circle-cli
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
 # Install NPM
-# With the horrible pattern of curl [] | sudo!
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+VERSION=node_10.x
+DISTRO="$(lsb_release -s -c)"
+echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 RUN apt-get install nodejs -y
 RUN npm install -g gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
 
