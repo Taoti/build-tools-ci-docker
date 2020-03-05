@@ -47,7 +47,7 @@ RUN composer -n global require -n "hirak/prestissimo:^0.3"
 # With the horrible pattern of curl [] | sudo!
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install nodejs -y
-RUN npm install -g gulp-cli
+RUN npm install -g gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
 
 # Create an unpriviliged testuser
 RUN groupadd -g 999 tester && \
