@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && apt-get install -y google-chrome-unstable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst ttf-freefont \
       --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /etc/apt/sources.list.d/google-chrome-unstable.list \
     && apt-get purge --auto-remove -y curl \
     && rm -rf /src/*.deb
 
