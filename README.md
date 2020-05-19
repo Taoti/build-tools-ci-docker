@@ -30,4 +30,5 @@ This is the source Dockerfile for the [Taoti build tools docker image](https://q
 - Gulp
 
 ## Usage:
-Use from Quay.io
+Use from Quay.io: quay.io/taoticreative/build-tools-ci-docker:prepare-for-pantheon
+or dockerhub: taoti/build-tools-ci-docker:prepare-for-pantheon
