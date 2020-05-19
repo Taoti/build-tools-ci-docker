@@ -28,3 +28,6 @@ This is the source Dockerfile for the [Taoti build tools docker image](https://q
 - Test scripts
 - NPM
 - Gulp
+
+## Usage:
+Use from Quay.io
