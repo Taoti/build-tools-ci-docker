@@ -41,7 +41,7 @@ ADD . /build-tools-ci
 
 # Collect the components we need for this image
 RUN apt-get update
-RUN apt-get install -y ruby jq curl apt-utils apt-transport-https ca-certificates
+RUN apt-get install -y ruby jq curl apt-utils apt-transport-https ca-certificates sshpass
 RUN gem install circle-cli
 RUN composer -n global require -n "hirak/prestissimo:^0.3"
 
