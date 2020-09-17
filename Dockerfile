@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM drupaldocker/php:7.3-cli
+FROM drupaldocker/php:7.3-cli-2.x
 ARG DEBIAN_FRONTEND=noninteractive
 
 ###########################
