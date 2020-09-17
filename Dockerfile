@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM drupaldocker/php:7.2-cli
+FROM drupaldocker/php:7.3-cli-2.x
 ARG DEBIAN_FRONTEND=noninteractive
 
 ###########################
@@ -92,7 +92,7 @@ RUN composer -n create-project -d /usr/local/share/terminus-plugins pantheon-sys
 #RUN curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh | bash
 
 # Add phpcs for use in checking code style
-RUN mkdir ~/phpcs && cd ~/phpcs && COMPOSER_BIN_DIR=/usr/local/bin composer require squizlabs/php_codesniffer:^2.7
+RUN mkdir ~/phpcs && cd ~/phpcs && COMPOSER_BIN_DIR=/usr/local/bin composer require squizlabs/php_codesniffer:^3.5
 
 # Add phpunit for unit testing
 RUN mkdir ~/phpunit && cd ~/phpunit && COMPOSER_BIN_DIR=/usr/local/bin composer require phpunit/phpunit:^6
