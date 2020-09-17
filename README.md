@@ -6,7 +6,7 @@ This is the source Dockerfile for the [Taoti build tools docker image](https://q
 
 ## Image Contents
 
-- [Drupal PHP 7.2 Docker base image](https://github.com/drupal-docker/php/tree/master/7.2)
+- [Drupal PHP 7.3 Docker base image](https://github.com/drupal-docker/php/tree/master/7.3)
 - [Terminus](https://github.com/pantheon-systems/terminus)
 - Terminus plugins
   - [Terminus Build Tools Plugin](https://github.com/pantheon-systems/terminus-build-tools-plugin)
