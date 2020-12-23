@@ -11,5 +11,5 @@ RUN composer -n global remove "hirak/prestissimo"
 RUN composer selfupdate
 
 #Add drupal-check for deprecation testing purposes.
-RUN composer -n global require "consolidation/cgr"
+RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n global require "consolidation/cgr"
 RUN cgr mglaman/drupal-check --bin-dir /usr/local/bin/
