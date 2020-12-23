@@ -1,4 +1,5 @@
 FROM quay.io/pantheon-public/build-tools-ci:6.x
+USER root
 
 RUN npm install -g gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
 
