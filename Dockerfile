@@ -8,7 +8,7 @@ RUN git clone --branch=prepare-for-pantheon https://github.com/NickWilde1990/ter
 
 # Remove hirak/prestismo (Composer 2 incompatible).
 RUN composer -n global remove "hirak/prestissimo"
-RUN composer selfupdate
+RUN composer self-update --2
 
 #Add drupal-check for deprecation testing purposes.
 RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n global require "consolidation/cgr"
