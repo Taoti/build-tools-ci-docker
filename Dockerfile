@@ -5,7 +5,10 @@ RUN npm install -g gulp-cli stylelint stylelint-no-browser-hacks stylelint-confi
 RUN rm -rf /usr/local/share/terminus-plugins/terminus-build-tools-plugin
 RUN git clone --branch=prepare-for-pantheon https://github.com/NickWilde1990/terminus-build-tools-plugin.git /usr/local/share/terminus-plugins/terminus-build-tools-plugin
 
+# Remove hirak/prestismo (Composer 2 incompatible).
+RUN composer -n global remove "hirak/prestissimo"
+RUN composer selfupdate
+
 #Add drupal-check for deprecation testing purposes.
-RUN curl -O -L https://github.com/mglaman/drupal-check/releases/download/1.0.14/drupal-check.phar
-RUN mv drupal-check.phar /usr/local/bin/drupal-check
-RUN chmod +x /usr/local/bin/drupal-check
+RUN composer -n global require "consolidation/cgr"
+RUN cgr mglaman/drupal-check --bin-dir /usr/local/bin/
