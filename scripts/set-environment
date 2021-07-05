@@ -41,6 +41,8 @@ DEFAULT_BRANCH=${DEFAULT_BRANCH:-master}
 if [[ ${CI_BRANCH} == ${DEFAULT_BRANCH} ]] ; then
   # Use dev as the environment.
 	DEFAULT_ENV=${DEFAULT_ENV:-dev}
+elif [[${CI_BRANCH} == integration ]]
+  DEFAULT_ENV=integration
 else
   # Otherwise, name the environment after the CI build number.
 	DEFAULT_ENV=ci-$CI_BUILD_NUMBER
