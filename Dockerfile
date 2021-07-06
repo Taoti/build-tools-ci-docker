@@ -12,4 +12,9 @@ RUN composer self-update --2
 RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n global require --optimize-autoloader --sort-packages "consolidation/cgr:^2.0"
 #Add drupal-check for deprecation testing purposes.
 RUN /usr/bin/env COMPOSER_BIN_DIR=/usr/local/bin composer -n global require --optimize-autoloader --sort-packages "mglaman/drupal-check:^1"
-RUN composer --version
+
+# Set the working directory to /build-tools-ci
+WORKDIR /build-tools-ci
+
+# Copy the current directory contents into the container at /build-tools-ci
+ADD . /build-tools-ci
